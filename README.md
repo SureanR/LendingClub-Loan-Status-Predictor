@@ -380,17 +380,14 @@ from tensorflow.keras.layers import Dense,Dropout
 ```
 model = Sequential()
 
-model.add(Dense(160,  activation='relu'))
-model.add(Dropout(0.2))
+model.add(Dense(79,  activation='relu'))
+model.add(Dropout(0.5))
 
-model.add(Dense(80,  activation='relu'))
-model.add(Dropout(0.2))
+model.add(Dense(39, activation='relu'))
+model.add(Dropout(0.5))
 
-model.add(Dense(40, activation='relu'))
-model.add(Dropout(0.2))
-
-model.add(Dense(20, activation='relu'))
-model.add(Dropout(0.))
+model.add(Dense(19, activation='relu'))
+model.add(Dropout(0.5))
 
 model.add(Dense(units=1,activation='sigmoid'))
 
@@ -414,7 +411,7 @@ model.fit(x=X_train,
 losses = pd.DataFrame(model.history.history)
 losses[['loss','val_loss']].plot()
 ```
-![image](https://user-images.githubusercontent.com/89992872/132105944-6b639c28-e31c-4d49-b3a8-899fe16e5420.png)
+![image](https://user-images.githubusercontent.com/89992872/134999877-cefcba6b-ee88-4a51-8f80-2ac34c1514bb.png)
 
 ## Classification Report and Confusion Matrix
 ```
@@ -425,8 +422,8 @@ predictions = model.predict(X_test)
 predictions = (predictions > 0.5).astype(int)
 print(classification_report(y_test,predictions))
 ```
-![image](https://user-images.githubusercontent.com/89992872/132105966-f9e0bdc9-d1c6-48b2-afa5-cdcf05d854ed.png)
+![image](https://user-images.githubusercontent.com/89992872/134999934-54a6c9d7-d7cd-495e-8b3c-7cafba6e9897.png)
 ```
 confusion_matrix(y_test,predictions)
 ```
-![image](https://user-images.githubusercontent.com/89992872/132105984-2c73b9cb-552c-4fe2-b939-e8e5e737e71a.png)
+![image](https://user-images.githubusercontent.com/89992872/134999962-30305fbc-bb6b-4671-b17a-a6727374792c.png)
