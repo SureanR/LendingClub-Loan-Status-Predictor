@@ -422,7 +422,7 @@ predictions = model.predict(X_test)
 predictions = (predictions > 0.5).astype(int)
 print(classification_report(y_test,predictions))
 ```
-![image](https://user-images.githubusercontent.com/89992872/134999934-54a6c9d7-d7cd-495e-8b3c-7cafba6e9897.png)
+![image](https://user-images.githubusercontent.com/89992872/135000030-75ce0fcf-5189-40ae-a540-7ec13b4110cc.png)
 ```
 confusion_matrix(y_test,predictions)
 ```
