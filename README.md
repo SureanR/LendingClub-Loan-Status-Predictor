@@ -35,6 +35,10 @@ sns.heatmap(df.corr(),cmap='coolwarm',annot=True)
 
 ## Exploring the almost perfect correlation with the "installment feature"
 ```
+def feat_info(col_name):
+    print(data_info.loc[col_name]['Description'])
+```
+```
 feat_info('installment')
 ```
 ![image](https://user-images.githubusercontent.com/89992872/132103405-732b9d9d-f87f-4119-9d65-330f40828b7b.png)
