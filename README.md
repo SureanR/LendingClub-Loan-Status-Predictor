@@ -49,6 +49,10 @@ feat_info('loan_amnt')
 ```
 sns.scatterplot(x='installment',y='loan_amnt',data=df)
 ```
+## Dropping installment column
+```
+df=df.drop('installment', axis=1)
+```
 ![image](https://user-images.githubusercontent.com/89992872/132103431-4efed838-729e-40e9-8ad4-e61dee885f61.png)
 ```
 sns.boxplot(x='loan_status', y='loan_amnt', data=df)  
@@ -415,7 +419,7 @@ model.fit(x=X_train,
 losses = pd.DataFrame(model.history.history)
 losses[['loss','val_loss']].plot()
 ```
-![image](https://user-images.githubusercontent.com/89992872/134999877-cefcba6b-ee88-4a51-8f80-2ac34c1514bb.png)
+![image](https://user-images.githubusercontent.com/89992872/140408105-485f9542-f881-434b-b02f-ad9c29fc65da.png)
 
 ## Classification Report and Confusion Matrix
 ```
@@ -426,8 +430,10 @@ predictions = model.predict(X_test)
 predictions = (predictions > 0.5).astype(int)
 print(classification_report(y_test,predictions))
 ```
-![image](https://user-images.githubusercontent.com/89992872/135000030-75ce0fcf-5189-40ae-a540-7ec13b4110cc.png)
+![image](https://user-images.githubusercontent.com/89992872/140408174-cf2a9f42-0e55-4792-85de-0621dba2a9e0.png)
+
 ```
 confusion_matrix(y_test,predictions)
 ```
-![image](https://user-images.githubusercontent.com/89992872/134999962-30305fbc-bb6b-4671-b17a-a6727374792c.png)
+![image](https://user-images.githubusercontent.com/89992872/140408327-e4068f1d-f306-4fb4-9861-c5721eedb749.png)
+
