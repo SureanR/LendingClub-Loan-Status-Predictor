@@ -49,11 +49,12 @@ feat_info('loan_amnt')
 ```
 sns.scatterplot(x='installment',y='loan_amnt',data=df)
 ```
+![image](https://user-images.githubusercontent.com/89992872/132103431-4efed838-729e-40e9-8ad4-e61dee885f61.png)
 ## Dropping installment column
 ```
 df=df.drop('installment', axis=1)
 ```
-![image](https://user-images.githubusercontent.com/89992872/132103431-4efed838-729e-40e9-8ad4-e61dee885f61.png)
+
 ```
 sns.boxplot(x='loan_status', y='loan_amnt', data=df)  
 ```
